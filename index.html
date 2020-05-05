@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Scanner</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/"> 
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- <script src="//webrtc.github.io/adapter/adapter-latest.js" type="text/javascript"></script> -->
+        <!--<script src="https://serratus.github.io/quaggaJS/javascripts/scale.fix.js"></script> -->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Scanner</a>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03" >
+                <div class="controls">
+                    <fieldset class="reader-config-group">
+                        <label>
+                            <span>Barcode-Type</span>
+                            <select name="decoder_readers">
+                                <option value="code_128">Code 128</option>
+                                <option value="code_39">Code 39</option>
+                                <option value="code_39_vin">Code 39 VIN</option>
+                                <option value="ean" selected="selected">EAN</option>
+                                <option value="ean_extended">EAN-extended</option>
+                                <option value="ean_8">EAN-8</option>
+                                <option value="upc">UPC</option>
+                                <option value="upc_e">UPC-E</option>
+                                <option value="codabar">Codabar</option>
+                                <option value="i2of5">I2of5</option>
+                                <option value="2of5">Standard 2 of 5</option>
+                                <option value="code_93">Code 93</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Resolution (long side)</span>
+                            <select name="input-stream_constraints">
+                                <option value="320x240">320px</option>
+                                <option selected="selected" value="640x480">640px</option>
+                                <option value="800x600">800px</option>
+                                <option value="1280x720">1280px</option>
+                                <option value="1600x960">1600px</option>
+                                <option value="1920x1080">1920px</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Patch-Size</span>
+                            <select name="locator_patch-size">
+                                <option value="x-small">x-small</option>
+                                <option value="small">small</option>
+                                <option selected="selected" value="medium">medium</option>
+                                <option value="large">large</option>
+                                <option value="x-large">x-large</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Half-Sample</span>
+                            <input type="checkbox" checked="checked" name="locator_half-sample">
+                        </label>
+                        <label>
+                            <span>Workers</span>
+                            <select name="numOfWorkers">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option selected="selected" value="4">4</option>
+                                <option value="8">8</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Camera</span>
+                            <select name="input-stream_constraints" id="deviceSelection">
+                            </select>
+                        </label>
+                        <label style="display: none">
+                            <span>Zoom</span>
+                            <select name="settings_zoom"></select>
+                        </label>
+                        <label style="display: none">
+                            <span>Torch</span>
+                            <input type="checkbox" name="settings_torch">
+                        </label>
+                    </fieldset>
+                    <fieldset class="input-group">
+                        <button class="stop">Stop</button>
+                    </fieldset>
+                </div>
+            </div>
+          </nav>
+        <section id="container" class="container">
+            <div id="result_strip">
+                <ul class="thumbnails list-group"></ul>
+            </div>
+            <div id="interactive" class="viewport"><video autoplay="true" preload="auto" src=""></video></div>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+        <script src="js/quagga.min.js" type="text/javascript"></script>
+        <script src="js/scanner.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;  
+    flex-direction: column;
+}
+
+.viewport {
+    display: block;
+    position: relative;
+}
+
+.viewport video {
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+.viewport canvas {
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+canvas.drawing, canvas.drawingBuffer {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
